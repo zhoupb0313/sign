@@ -15,7 +15,7 @@ public class Main_2 {
 	public static void main(String[] args)
 	{
 		String str = in.next();
-		System.out.printf("%s%s对称字符串", str, fun(str) ? "是" : "不是");
+		System.out.printf("%s", fun(str) ? "Yes" : "No");
 	}
 
 	static boolean fun(String str)
