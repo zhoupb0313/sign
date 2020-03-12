@@ -30,7 +30,7 @@ public class Main_2 {
 		}
 //		System.out.printf("%d!=%d!*%d\n", n, n - 1, n);
 		System.out.println(n + "!=" + (n - 1) + "*" + n);
-		return f(n - 1) * n;
+		return n * f(n - 1);
 	}
 
 }
