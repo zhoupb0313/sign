@@ -19,7 +19,8 @@ public class Main_3 {
 			new StudentTHIS(4, 14, "zhoupb4"),
 			new StudentTHIS(2, 21, "zhoupb2"),
 		};
-		sort(ss, 0, ss.length - 1);
+//		sort(ss, 0, ss.length - 1);
+		java.util.Arrays.sort(ss);
 		for (int i = 0; i < ss.length; i++) System.out.println(ss[i]);
 		int ans = 0;
 		for (int i = 0; i < ss.length; i++) 
@@ -30,29 +31,29 @@ public class Main_3 {
 		System.out.println(ans);
 	}
 	
-	static void sort(StudentTHIS[] a, int l, int r)
-	{
-		if (l >= r) return;
-		StudentTHIS x = a[l + r >> 1];
-		int i = l - 1, j = r + 1;
-		while (i < j)
-		{
-			while (a[++i].id < x.id);
-			while (a[--j].id > x.id);
-			if (i < j)
-			{
-				StudentTHIS t = a[i];
-				a[i] = a[j];
-				a[j] = t;
-			}
-		}
-		sort(a, l, j);
-		sort(a, j + 1, r);
-	}
+//	static void sort(StudentTHIS[] a, int l, int r)
+//	{
+//		if (l >= r) return;
+//		StudentTHIS x = a[l + r >> 1];
+//		int i = l - 1, j = r + 1;
+//		while (i < j)
+//		{
+//			while (a[++i].id < x.id);
+//			while (a[--j].id > x.id);
+//			if (i < j)
+//			{
+//				StudentTHIS t = a[i];
+//				a[i] = a[j];
+//				a[j] = t;
+//			}
+//		}
+//		sort(a, l, j);
+//		sort(a, j + 1, r);
+//	}
 
 }
 
-class StudentTHIS 
+class StudentTHIS implements Comparable<StudentTHIS>
 {
 	int id, age;
 	String name;
@@ -67,6 +68,11 @@ class StudentTHIS
 	@Override
 	public String toString() {
 		return "StudentTHIS [id=" + id + ", age=" + age + ", name=" + name + "]";
+	}
+
+	@Override
+	public int compareTo(StudentTHIS o) {
+		return id - o.id;
 	}
 	
 }
