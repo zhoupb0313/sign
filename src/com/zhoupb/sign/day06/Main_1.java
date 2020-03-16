@@ -20,7 +20,7 @@ public class Main_1 {
 		}
 		System.out.println("max: " + max);
 		System.out.println("mix: " + min);
-		System.out.println("average: " + sum / a.length);
+		System.out.println("average: " + sum / a.length); 
 	}
 
 }
