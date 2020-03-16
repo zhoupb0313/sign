@@ -11,7 +11,7 @@ public class Main_1 {
 	public static void main(String[] args)
 	{
 		double[] a = {9.8, 12, 45, 67, 23, 1.98, 2.55, 45};
-		double min = a[0], max = a[0], sum = 0;
+		double min = a[0], max = a[0], sum = a[0];
 		for (int i = 1; i < a.length; i++)
 		{
 			if (a[i] < min) min = a[i];
