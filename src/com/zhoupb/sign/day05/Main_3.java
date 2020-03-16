@@ -15,14 +15,13 @@ public class Main_3 {
 	 */
 	
 	public static void main(String[] args) {
-//		Shape[] ss = 
-//		{
-//			new Circle(2),
-//			new Rectangle(3, 4),
-//			new Triangle(2, 5)
-//		};
-//		for (Shape s : ss) System.out.println(s.calArea());
-		System.out.println(Math.pow(1000, 3));
+		Shape[] ss = 
+		{
+			new Circle(2),
+			new Rectangle(3, 4),
+			new Triangle(2, 5)
+		};
+		for (Shape s : ss) System.out.println(s.calArea());
 	}
 }
 
