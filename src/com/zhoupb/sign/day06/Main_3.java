@@ -1,5 +1,6 @@
 package com.zhoupb.sign.day06;
 
+import java.awt.Image;
 import java.util.*;
 
 public class Main_3 {
@@ -27,16 +28,44 @@ public class Main_3 {
 	{
 		double ans = 0;
 		double income = in.nextDouble();
+//		double salary = income;
 		int level = 0;
-		int[] a = {1500, 4500, 9000, 35000, 55000, 80000};
-		int[] tax = {5, 10, 20, 25, 30, 35, 35};
+		long[] a = {0, 1500, 4500, 9000, 35000, 55000, 80000, Long.MAX_VALUE};
+		int[] taxs = {5, 10, 20, 25, 30, 35, 45};
 		income -= 3000;
-		while (income > 0)
+		while (income > a[level])
 		{
-			ans += (income - a[level] < 0 ? income : a[level]) * (tax[level] / 100.0);
-			income -= a[level++];
+			ans += (income > a[level + 1] ? a[level + 1] - a[level] : income - a[level]) * taxs[level] / 100.0;
+			level++;
 		}
 		System.out.println(ans);
+		
+//		double money = 0;// 税额
+//        double taxes = 0;
+//        if (salary < 0) {
+//            System.out.println("你工资哪去了？？？");
+//        } else {
+//            money = salary - 3000;
+//            if (money <= 0) {
+//                System.out.println("个税的起征点为 3000元");
+//            } else if (money <= 1500) {
+//                taxes = money * 0.05;
+//            } else if (money <= 4500) {
+//                taxes = 1500 * 0.05 + (money - 1500) * 0.1; //
+//            } else if (money <= 9000) {
+//                taxes = 1500 * 0.05 + 3000 * 0.1 + (money - 4500) * 0.2;
+//            } else if (money <= 35000) {
+//                taxes = 1500 * 0.05 + 3000 * 0.1 + 4500 * 0.2 + (money - 9000) * 0.25;
+//            } else if (money <= 55000) {
+//                taxes = 1500 * 0.05 + 3000 * 0.1 + 4500 * 0.2 + 26000 * 0.25 + (money - 35000) * 0.3;
+//            } else if (money <= 80000) {
+//                taxes = 1500 * 0.05 + 3000 * 0.1 + 4500 * 0.2 + 26000 * 0.25 + 20000 * 0.3 + (money - 55000) * 0.35;
+//            } else {
+//                taxes = 1500 * 0.05 + 3000 * 0.1 + 4500 * 0.2 + 26000 * 0.25 + 20000 * 0.3 + 25000 * 0.35 + (money - 80000) * 0.45;
+//            }
+//            System.out.println("你要交的税为：" + taxes + "元");
+//        }
+		
 	}
 	
 }
