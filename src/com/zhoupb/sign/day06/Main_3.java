@@ -1,6 +1,5 @@
 package com.zhoupb.sign.day06;
 
-import java.awt.Image;
 import java.util.*;
 
 public class Main_3 {
