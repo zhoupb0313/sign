@@ -14,15 +14,15 @@ public class Main_1 {
 	
 	static Scanner in = new Scanner(System.in);
 	static final int N = (int)1e5 + 3;
-	static int[] e = new int[N];
-
+	static int[] h = new int[N], e = new int[N], ne = new int[N], counts = new int[N];
+	static int idx = 1;
 	public static void main(String[] args) {
 		int[] a = {3, 1, 4, 7, 2, 1, 1, 2, 2};
 		for (int i = 0; i < a.length; i++) insert(a[i]);
 		int max = -1, value = 0, count = 0;
 		for (int i = 0; i < a.length; i++)
 		{
-			count = e[find(a[i])];
+			count = counts[find(a[i])];
 			if (count > max)
 			{
 				max = count;
@@ -35,11 +35,26 @@ public class Main_1 {
 	static void insert(int x)
 	{
 		int k = (x % N + N) % N;
-		e[k]++;
+		int i = find(x);
+		if (i != -1)
+		{
+			counts[i]++;
+			return;
+		}
+		e[idx] = x;
+		ne[idx] = h[k];
+		h[k] = idx++;
 	}
 	
 	static int find(int x)
 	{
-		return (x % N + N) % N;
+		int k = (x % N + N) % N;
+		int p = h[k];
+		while (p != 0)
+		{
+			if (e[p] == x) return p;
+			p = ne[p];
+		}
+		return -1;
 	}
 }
