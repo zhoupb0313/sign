@@ -18,18 +18,44 @@ public class Main_1 {
 	static int idx = 1;
 	public static void main(String[] args) {
 		int[] a = {3, 1, 4, 7, 2, 1, 1, 2, 2};
-		for (int i = 0; i < a.length; i++) insert(a[i]);
-		int max = -1, value = 0, count = 0;
-		for (int i = 0; i < a.length; i++)
+		int[] k = new int[a.length];
+		int[] v = new int[a.length];
+		int index = 0;
+		for (int i = 0; i < a.length; i++) 
 		{
-			count = counts[find(a[i])];
-			if (count > max)
+			int t = getIndex(k, a[i]);
+			if (t != -1) v[t]++;
+			else k[index++] = a[i];
+		}
+		int max = -1, value = 0;
+		for (int i = 0; i < index; i++)
+		{
+			if (v[i] > max)
 			{
-				max = count;
-				value = a[i];
+				max = v[i];
+				value = k[i];
 			}
 		}
-		System.out.println(value);
+		System.out.println(value + " 出现了" + (max + 1));
+//		for (int i = 0; i < a.length; i++) insert(a[i]);
+//		int max = -1, value = 0, count = 0;
+//		for (int i = 0; i < a.length; i++)
+//		{
+//			count = counts[find(a[i])];
+//			if (count > max)
+//			{
+//				max = count;
+//				value = a[i];
+//			}
+//		}
+//		System.out.println(value);
+	}
+	
+	static int getIndex(int[] a, int k)
+	{
+		for (int i = 0; i < a.length; i++)
+			if (a[i] == k) return i;
+		return -1;
 	}
 	
 	static void insert(int x)
