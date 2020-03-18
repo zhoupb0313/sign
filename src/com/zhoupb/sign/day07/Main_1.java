@@ -1,6 +1,8 @@
 package com.zhoupb.sign.day07;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Main_1 {
 
@@ -18,25 +20,45 @@ public class Main_1 {
 	static int idx = 1;
 	public static void main(String[] args) {
 		int[] a = {3, 1, 4, 7, 2, 1, 1, 2, 2};
-		int[] k = new int[a.length];
-		int[] v = new int[a.length];
-		int index = 0;
-		for (int i = 0; i < a.length; i++) 
+		
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+		for (int t : a)
 		{
-			int t = getIndex(k, a[i]);
-			if (t != -1) v[t]++;
-			else k[index++] = a[i];
+			map.put(t, map.getOrDefault(t, 0) + 1);
 		}
-		int max = -1, value = 0;
-		for (int i = 0; i < index; i++)
+		int max = -1, value = 0, count = 0;
+		for (int t : a)
 		{
-			if (v[i] > max)
+			count = map.get(t);
+			if (count > max)
 			{
-				max = v[i];
-				value = k[i];
+				max = count;
+				value = t;
 			}
 		}
-		System.out.println(value + " 出现了" + (max + 1));
+		System.out.println(value + "出现了" + max);
+//		int[] k = new int[a.length];
+//		int[] v = new int[a.length];
+//		int index = 0;
+//		for (int i = 0; i < a.length; i++) 
+//		{
+//			int t = getIndex(k, a[i]);
+//			if (t != -1) v[t]++;
+//			else k[index++] = a[i];
+//		}
+//		int max = -1, value = 0;
+//		for (int i = 0; i < index; i++)
+//		{
+//			if (v[i] > max)
+//			{
+//				max = v[i];
+//				value = k[i];
+//			}
+//		}
+//		System.out.println(value + " 出现了" + (max + 1));
+		
+		
+		
 //		for (int i = 0; i < a.length; i++) insert(a[i]);
 //		int max = -1, value = 0, count = 0;
 //		for (int i = 0; i < a.length; i++)
