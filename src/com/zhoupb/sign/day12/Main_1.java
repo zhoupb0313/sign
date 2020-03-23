@@ -25,6 +25,5 @@ public class Main_1 {
 		}
 		System.out.println(cnt - 1 + " " + sum);
 	}
-	
 
 }
