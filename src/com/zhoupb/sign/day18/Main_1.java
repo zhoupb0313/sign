@@ -7,6 +7,7 @@ public class Main_1 {
 	 * 有1、2、3、4个数字，能组成多少个互不相同且无重复数字的三位数？要求输出所有可能的三位数。
 	 * 注意：使用循环结构语句实现。
 	 */
+	
 	static int a[] = new int[5];
 	static boolean st[] = new boolean[5];
 	
