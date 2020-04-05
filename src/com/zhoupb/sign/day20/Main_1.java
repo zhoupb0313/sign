@@ -8,7 +8,7 @@ public class Main_1 {
 	 * 数组A是函数(或方法)的输入参数，
 	 * 将数组A中的数据元素序列逆置后存储到数组B中，然后将数组B做为函数(或方法)的返回值返回。
 	 * 所谓逆置是把(a0, a1, …, an-1)变为(an-1, …, a1, a0)。
-	 * 要求：使用函数(或方法)实现，原型为int[]  niZi(int[] A)
+	 * 要求：使用函数(或方法)实现，原型为int[]  niZi(int[] A) 
 	 */
 	
 	public static void main(String args[])
