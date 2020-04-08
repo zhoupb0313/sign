@@ -18,7 +18,7 @@ public class Main_1 {
 		for (int x = 0; x <= 100; x++)
 			for (int y = 0; y <= 100; y++)
 				if (x * 9 + y == 300 && x + y == 100)
-					System.out.printf("大型:%d, 小型:%d\n", x, y);
+					System.out.printf("大型:%d头, 小型:%d头\n", x, y);
 	}
 	
 }
