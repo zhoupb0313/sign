@@ -15,7 +15,8 @@ public class Main_2 {
 	public static void main(String args[])
 	{
 		double d = in.nextDouble(), h = in.nextDouble(), r = in.nextDouble();
-		System.out.printf("ans = %.2f", 2 * 3.14 * r * r * + 3.14 * d * h);
+		r = r + d - d;
+		System.out.printf("ans = %.2f", 2 * 3.14 * r * r * + 3.14 * 2 * r * h);
 	}
 	
 }
